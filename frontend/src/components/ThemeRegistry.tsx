@@ -50,7 +50,7 @@ export default function ThemeRegistry({
           mode === "light"
             ? "rgba(240, 240, 240, 0.07)"
             : "rgba(255, 255, 255, 0.07)",
-        paper: mode === "light" ? "#ffffff" : "#0a0a0a",
+        paper: mode === "light" ? "#fff" : "#0a0a0a",
       },
 
       text: {

@@ -35,6 +35,7 @@ function ProjectCard(props: ProjectCardType) {
         borderRadius: 7,
         background: theme.palette.background.glass,
         backdropFilter: "blur(10px)",
+        border: `3px solid ${theme.palette.background.glass}`,
         "&:hover": {
           transform: "rotate(0deg)",
         },
@@ -54,6 +55,11 @@ function ProjectCard(props: ProjectCardType) {
         <Button
           variant="outlined"
           fullWidth
+          sx={{
+            backgroundColor: theme.palette.background.glass,
+            color: theme.palette.text.primary,
+            border: `1px solid #cbcbcbff`,
+          }}
           // onClick={() => window.open(githubLink, "_blank")}
         >
           GitHub
@@ -62,6 +68,10 @@ function ProjectCard(props: ProjectCardType) {
           variant="contained"
           fullWidth
           onClick={() => window.open(appLink, "_blank")}
+          sx={{
+            backgroundColor: theme.palette.background.default,
+            color: theme.palette.text.primary,
+          }}
         >
           Open
         </Button>
