@@ -1,12 +1,11 @@
-"use client";
-
 import { DM_Sans, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { metadata as siteMetadata } from "./metadata";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Providers from "./providers";
-import { Box } from "@mui/material";
+
+export const metadata = siteMetadata;
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -43,18 +42,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-/**
- * to do list:
- * Case studies
-
-Live project links
-
-Screenshots + Code links
-
-Video demos
-
-GitHub Repos
-
-Testimonials
- */

@@ -17,11 +17,15 @@ declare module "@mui/material/styles" {
   interface Palette {
     text: TypeText;
     background: TypeBackground;
+    borderColor: string;
+    boxShadow: string;
   }
 
   interface PaletteOptions {
     text?: Partial<TypeText>;
     background?: Partial<TypeBackground>;
+    borderColor?: string;
+    boxShadow?: string;
   }
 }
 
@@ -48,14 +52,17 @@ export default function ThemeRegistry({
         default: mode === "light" ? "#f5f5f5" : "#000509",
         glass:
           mode === "light"
-            ? "rgba(240, 240, 240, 0.07)"
-            : "rgba(255, 255, 255, 0.07)",
+            ? "rgba(77, 77, 77, 0.07)"
+            : "rgba(255, 255, 255, 0.2)",
         paper: mode === "light" ? "#fff" : "#0a0a0a",
       },
 
+      borderColor: mode === "light" ? "#e1e1e1" : "rgba(255, 255, 255, 0.29)",
+      boxShadow: "#3535355e",
+
       text: {
         primary: mode === "light" ? "#111" : "#ffffff",
-        secondary: mode === "light" ? "#555" : "#e1e1e1",
+        secondary: mode === "light" ? "#555" : "rgba(255,255,255,0.5)",
         highlight: mode === "light" ? "#eee" : "#333",
       },
     },

@@ -1,7 +1,8 @@
-import AboutSection from "@/components/sections/AboutSection";
-import ContactSection from "@/components/sections/ContactSection";
+import AboutSection from "@/components/sections/AboutSection/AboutSection";
+import ContactSection from "@/components/sections/ContactSection/ContactSection";
+import GithubRepoSection from "@/components/sections/GithubRepoSection/GithubRepoSection";
 import HeroSection from "@/components/sections/HeroSection/HeroSection";
-import ProjectsSection from "@/components/sections/ProjectSection";
+import ProjectsSection from "@/components/sections/ProjectSection/ProjectSection";
 import { Box } from "@mui/material";
 
 export default function Home() {
@@ -27,6 +28,9 @@ export default function Home() {
 
       {/* PROJECTS SECTION */}
       <ProjectsSection />
+
+      {/* GITHUB REPO SECTION */}
+      <GithubRepoSection limit={6} />
 
       {/* CONTACT SECTION */}
       <ContactSection />

@@ -14,10 +14,12 @@ import CallIcon from "@mui/icons-material/Call";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
 import { toggleTheme } from "@/redux/slice/themeReducer";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const theme = useTheme();
   const dispatch = useDispatch<AppDispatch>();
+  const router = useRouter();
 
   const handleThemeChange = () => {
     dispatch(toggleTheme());
@@ -28,6 +30,10 @@ export default function Header() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleIconClick = () => {
+    router.push("/");
   };
 
   return (
@@ -46,6 +52,7 @@ export default function Header() {
         WebkitBackdropFilter: "blur(15px)",
         left: "50%",
         transform: "translateX(-50%)",
+        boxShadow: `0px 0px 50px ${theme.palette.boxShadow}`,
 
         width: {
           xs: "95%",
@@ -65,7 +72,15 @@ export default function Header() {
           paddingX: 2,
         }}
       >
-        <Stack direction={"row"} display={"flex"} alignItems={"center"}>
+        <Stack
+          direction={"row"}
+          display={"flex"}
+          alignItems={"center"}
+          sx={{
+            cursor: "pointer",
+          }}
+          onClick={handleIconClick}
+        >
           <Avatar
             src="/images/hiranmay-icon.png"
             sx={{
