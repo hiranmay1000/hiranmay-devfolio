@@ -153,7 +153,6 @@ export default function ProjectsSection() {
           WebkitBackgroundClip: "text",
           color: "transparent",
           WebkitTextFillColor: "transparent",
-
           animation: "shineText 25s linear infinite",
 
           "@keyframes shineText": {

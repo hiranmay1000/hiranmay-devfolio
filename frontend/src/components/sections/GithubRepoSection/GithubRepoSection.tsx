@@ -442,20 +442,22 @@ export default function GithubRepoSection(props: { limit?: number }) {
             alignItems={"center"}
             justifyContent={"center"}
             color={theme.palette.text.secondary}
+            borderBottom={`2px solid ${theme.palette.borderColor}`}
             fontSize={"24px"}
             fontWeight={"bolder"}
             height={50}
-            width={250}
+            width={130}
             sx={{
-              transition: "0.3s",
+              transition: "0.3s ease-out",
               cursor: "pointer",
               "&:hover": {
                 color: theme.palette.text.primary,
                 fontSize: "25px",
                 transform: "translateY(-6px)",
-                textShadow: `0 0px 50px ${theme.palette.text.primary}`,
                 animation: "paused",
+                width: "135px",
               },
+              "& svg": { fontSize: 22 },
             }}
             onClick={handleViewAllClick}
           >
