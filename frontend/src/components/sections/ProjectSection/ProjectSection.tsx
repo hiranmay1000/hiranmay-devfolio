@@ -20,10 +20,12 @@ interface ProjectCardType {
   githubLink?: string;
   appLink?: string;
 }
-
 function ProjectCard(props: ProjectCardType) {
   const { rotate, title, desc, iconFileName, githubLink, appLink } = props;
   const theme = useTheme();
+
+  const isDisabled = !githubLink && !appLink; // ❗ disabled when no project links available
+  const isComingSoon = title === "" || isDisabled;
 
   return (
     <Card
@@ -39,6 +41,7 @@ function ProjectCard(props: ProjectCardType) {
         background: theme.palette.background.glass,
         backdropFilter: "blur(25px)",
         border: `3px solid ${theme.palette.borderColor}`,
+        opacity: isDisabled ? 0.45 : 1, // 🔥 faded
         "&:hover": {
           transform: "rotate(0deg)",
         },
@@ -47,12 +50,12 @@ function ProjectCard(props: ProjectCardType) {
       <Stack direction="row" alignItems="center" gap={1}>
         <Avatar src={`/images/projects/${iconFileName}`} />
         <Typography variant="h6" fontWeight="bold">
-          {title}
+          {isComingSoon ? "🚧 In Progress" : title}
         </Typography>
       </Stack>
 
       <Typography variant="body2" sx={{ mt: 1 }}>
-        {desc}
+        {isComingSoon ? "Work in progress — stay tuned!" : desc}
       </Typography>
 
       <Stack
@@ -63,29 +66,32 @@ function ProjectCard(props: ProjectCardType) {
         <Button
           variant="contained"
           fullWidth
+          disabled={isDisabled}
           sx={{
             backgroundColor: theme.palette.background.default,
             color: theme.palette.text.primary,
             gap: 1,
+            opacity: isDisabled ? 0.4 : 1,
           }}
           onClick={() => window.open(githubLink, "_blank")}
         >
-          GitHub
-          <GitHubIcon />
+          GitHub <GitHubIcon />
         </Button>
+
         <Button
           variant="contained"
           fullWidth
+          disabled={isDisabled}
           onClick={() => window.open(appLink, "_blank")}
           sx={{
             backgroundColor: theme.palette.background.glass,
             color: theme.palette.text.secondary,
             border: `1px solid ${theme.palette.borderColor} !important`,
             gap: 1,
+            opacity: isDisabled ? 0.4 : 1,
           }}
         >
-          Open
-          <OpenInNewIcon />
+          Open <OpenInNewIcon />
         </Button>
       </Stack>
     </Card>
