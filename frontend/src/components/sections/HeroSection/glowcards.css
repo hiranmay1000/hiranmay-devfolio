@@ -1,5 +1,5 @@
 :root {
-  --backdrop: hsl(0 0% 60% / 0.12);
+  --backdrop: hsla(0, 0%, 52%, 0.579);
   --radius: 14;
   --border: 3;
   --backup-border: var(--backdrop);
@@ -171,8 +171,4 @@ button[data-glow] span {
 /* glowcards.css */
 .glow-btn {
   cursor: pointer;
-}
-
-.glow-btn:hover {
-  color: red;
 }

@@ -3,6 +3,7 @@
 import { Box, Container, Typography, useTheme } from "@mui/material";
 import Highlight from "@/components/shared/Highlight";
 import GlowCards from "./GlowCards";
+import "./herosection.css";
 
 export default function HeroSection() {
   const theme = useTheme();
@@ -10,11 +11,13 @@ export default function HeroSection() {
   return (
     <Container id="home" maxWidth="lg" sx={{ pt: 5, textAlign: "center" }}>
       <Typography variant="h3" fontWeight={700}>
-        Hi, I’m <span style={{ color: "#6b6b6bff" }}>Hiranmay</span> 👋
+        <span className="flicker-text">Hi, I’m</span>{" "}
+        <span style={{ color: "#6b6b6bff" }}>Hiranmay</span> 👋
       </Typography>
 
       <Typography variant="h3" fontWeight={700}>
-        - <span style={{ color: "#6b6b6bff" }}>Software</span> ENGINEER
+        - <span style={{ color: "#6b6b6bff" }}>Software</span>{" "}
+        <span className="flicker-text">ENGINEER</span>
       </Typography>
 
       <Box

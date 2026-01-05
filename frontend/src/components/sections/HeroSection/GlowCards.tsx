@@ -1,4 +1,5 @@
-import "../../../styles/glowcards.css";
+import { Box, useMediaQuery } from "@mui/material";
+import "./glowcards.css";
 import React from "react";
 
 export const usePointerGlow = () => {
@@ -39,20 +40,80 @@ const GlowCards = () => {
   return (
     <main>
       <article data-glow>
+        <Box
+          height={"100%"}
+          width={"100%"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <img
+            width="75"
+            height="75"
+            src="https://img.icons8.com/color/96/linkedin.png"
+            alt="linkedin"
+          />
+        </Box>
         <span data-glow />
-        <button data-glow className="glow-btn">
+        <button
+          data-glow
+          className="glow-btn"
+          onClick={() =>
+            window.open("https://www.linkedin.com/in/hiranmay1000/", "_blank")
+          }
+        >
           <span>LinkedIn</span>
         </button>
       </article>
       <article data-glow>
+        <Box
+          height={"100%"}
+          width={"100%"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <img
+            width="75"
+            height="75"
+            src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png"
+            alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo"
+          />
+        </Box>
         <span data-glow />
-        <button data-glow className="glow-btn">
+        <button
+          data-glow
+          className="glow-btn"
+          onClick={() =>
+            window.open("https://leetcode.com/u/hiranmay1000/", "_blank")
+          }
+        >
           <span>Leetcode</span>
         </button>
       </article>
       <article data-glow>
+        <Box
+          height={"100%"}
+          width={"100%"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <img
+            width="96"
+            height="96"
+            src="https://img.icons8.com/sf-regular-filled/96/github.png"
+            alt="github"
+          />
+        </Box>
         <span data-glow />
-        <button data-glow className="glow-btn">
+        <button
+          data-glow
+          className="glow-btn"
+          onClick={() =>
+            window.open("https://github.com/hiranmay1000/", "_blank")
+          }
+        >
           <span>GitHub</span>
         </button>
       </article>
