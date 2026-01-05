@@ -6,8 +6,6 @@ import GlowCards from "./GlowCards";
 import "./herosection.css";
 
 export default function HeroSection() {
-  const theme = useTheme();
-
   return (
     <Container id="home" maxWidth="lg" sx={{ pt: 5, textAlign: "center" }}>
       <Typography variant="h3" fontWeight={700}>
