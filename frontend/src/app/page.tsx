@@ -1,6 +1,7 @@
 import AboutSection from "@/components/sections/AboutSection/AboutSection";
 import ContactSection from "@/components/sections/ContactSection/ContactSection";
-import GithubRepoSection from "@/components/sections/GithubRepoSection/GithubRepoSection";
+import GithubRepoCarousel from "@/components/sections/GithubRepoSection/GithubRepoCarousel";
+// import GithubRepoSection from "@/components/sections/GithubRepoSection/GithubRepoSection";
 import HeroSection from "@/components/sections/HeroSection/HeroSection";
 import ProjectsSection from "@/components/sections/ProjectSection/ProjectSection";
 import { Box } from "@mui/material";
@@ -26,11 +27,11 @@ export default function Home() {
       {/* ABOUT SECTION */}
       <AboutSection />
 
-      {/* PROJECTS SECTION */}
+      {/* APPLICATION / PROJECTS SECTION */}
       <ProjectsSection />
 
       {/* GITHUB REPO SECTION */}
-      <GithubRepoSection limit={6} />
+      <GithubRepoCarousel />
 
       {/* CONTACT SECTION */}
       <ContactSection />

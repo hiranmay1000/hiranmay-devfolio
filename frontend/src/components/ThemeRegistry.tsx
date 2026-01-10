@@ -12,6 +12,7 @@ declare module "@mui/material/styles" {
 
   interface TypeBackground {
     glass: string;
+    chip: string;
   }
 
   interface Palette {
@@ -49,12 +50,16 @@ export default function ThemeRegistry({
       },
 
       background: {
-        default: mode === "light" ? "#f5f5f5" : "#000509",
+        default: mode === "light" ? "#f6f7f9" : "#00080e",
+        paper: mode === "light" ? "#fff" : "#000e1e",
         glass:
           mode === "light"
-            ? "rgba(77, 77, 77, 0.07)"
+            ? "rgba(134, 134, 134, 0.07)"
             : "rgba(255, 255, 255, 0.2)",
-        paper: mode === "light" ? "#fff" : "#0a0a0a",
+        chip:
+          mode === "light"
+            ? "rgba(134, 134, 134, 0.14)"
+            : "rgba(255, 255, 255, 0.17)",
       },
 
       borderColor: mode === "light" ? "#e1e1e1" : "rgba(255, 255, 255, 0.29)",
@@ -77,10 +82,10 @@ export default function ThemeRegistry({
   useEffect(() => {
     const root = document.documentElement;
     if (mode === "light") {
-      root.style.setProperty("--background", "#ffffff");
+      root.style.setProperty("--background", "#f6f7f9");
       root.style.setProperty("--foreground", "#222");
     } else {
-      root.style.setProperty("--background", "#000509ff");
+      root.style.setProperty("--background", "#00080e");
       root.style.setProperty("--foreground", "#ededed");
     }
   }, [mode]);

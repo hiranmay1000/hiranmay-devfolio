@@ -6,6 +6,22 @@ import ClientLayout from "./client-layout";
 
 export const metadata = siteMetadata;
 
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
+});
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -13,7 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body
+        className={`${dmSans.variable} ${geist.variable} ${geistMono.variable}`}
+      >
         <Providers>
           <ClientLayout>{children}</ClientLayout>
         </Providers>

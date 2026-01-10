@@ -15,7 +15,6 @@ export default function AboutSection() {
         flexDirection: "column",
         justifyContent: "center",
         gap: 6,
-        pt: 12,
       }}
     >
       {/* ---------- Heading ---------- */}

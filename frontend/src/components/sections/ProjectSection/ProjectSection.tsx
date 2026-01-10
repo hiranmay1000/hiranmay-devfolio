@@ -30,7 +30,7 @@ function ProjectCard(props: ProjectCardType) {
   return (
     <Card
       sx={{
-        width: { xs: "100%", sm: 260, md: 290 },
+        width: { xs: "100%", sm: 260, md: 250 },
         height: { xs: 240, sm: 260, md: 270 },
         display: "flex",
         flexDirection: "column",
@@ -103,7 +103,6 @@ export default function ProjectsSection() {
     <Box
       id="projects"
       sx={{
-        padding: "120px 0",
         position: "relative",
       }}
     >

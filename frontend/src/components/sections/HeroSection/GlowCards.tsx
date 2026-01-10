@@ -1,60 +1,53 @@
-import { Box, useMediaQuery } from "@mui/material";
-import "./glowcards.css";
+"use client";
+
 import React from "react";
+import { Box } from "@mui/material";
+import "./glowcards.css";
 
-export const usePointerGlow = () => {
-  const [status, setStatus] = React.useState<{
-    x: string;
-    y: string;
-    xp: string;
-    yp: string;
-  } | null>(null);
-
+const usePointerGlow = () => {
   React.useEffect(() => {
-    const syncPointer = (e: any) => {
-      const x = e.clientX.toFixed(2);
-      const y = e.clientY.toFixed(2);
-      const xp = (e.clientX / window.innerWidth).toFixed(2);
-      const yp = (e.clientY / window.innerHeight).toFixed(2);
+    const handleMove = (e: PointerEvent) => {
+      const target = (e.target as HTMLElement)?.closest(
+        "[data-glow]"
+      ) as HTMLElement | null;
 
-      document.documentElement.style.setProperty("--x", x);
-      document.documentElement.style.setProperty("--xp", xp);
-      document.documentElement.style.setProperty("--y", y);
-      document.documentElement.style.setProperty("--yp", yp);
+      if (!target) return;
 
-      setStatus({ x, y, xp, yp });
+      const rect = target.getBoundingClientRect();
+
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const xp = x / rect.width;
+      const yp = y / rect.height;
+
+      target.style.setProperty("--x", x.toString());
+      target.style.setProperty("--y", y.toString());
+      target.style.setProperty("--xp", xp.toString());
+      target.style.setProperty("--yp", yp.toString());
     };
 
-    document.body.addEventListener("pointermove", syncPointer);
-    return () => {
-      document.body.removeEventListener("pointermove", syncPointer);
-    };
+    document.addEventListener("pointermove", handleMove);
+    return () => document.removeEventListener("pointermove", handleMove);
   }, []);
-
-  return status;
 };
 
 const GlowCards = () => {
-  const _ = usePointerGlow();
+  usePointerGlow();
 
   return (
     <main>
       <article data-glow>
-        <Box
-          height={"100%"}
-          width={"100%"}
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
+        <Box display="flex" alignItems="center" justifyContent="center">
           <img
             width="75"
-            height="75"
             src="https://img.icons8.com/color/96/linkedin.png"
             alt="linkedin"
           />
         </Box>
+
         <span data-glow />
+
         <button
           data-glow
           className="glow-btn"
