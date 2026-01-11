@@ -81,8 +81,8 @@ export default function ContactForm() {
           mx: "auto",
           p: { xs: 3, sm: 5 },
           borderRadius: 5,
-          // background: theme.palette.background.paper,
           background: `${theme.palette.background.glass}`,
+          border: `5px solid ${theme.palette.borderColor}`,
           backdropFilter: "blur(25px)",
           boxShadow:
             theme.palette.mode === "dark"

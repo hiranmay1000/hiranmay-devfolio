@@ -4,8 +4,11 @@ import { Typography, Box, Stack, Paper, Chip } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import Person4Icon from "@mui/icons-material/Person4";
 import AppsIcon from "@mui/icons-material/Apps";
+import { useTheme } from "@mui/material/styles";
 
 export default function AboutSection() {
+  const theme = useTheme();
+
   return (
     <Box
       id="about"
@@ -114,8 +117,8 @@ export default function AboutSection() {
             label={skill}
             sx={{
               px: 2,
-              background: "rgba(255,255,255,0.1)",
-              border: "1px solid rgba(255,255,255,0.2)",
+              background: theme.palette.text.highlight,
+              border: `1px solid ${theme.palette.borderColor}`,
               backdropFilter: "blur(6px)",
               fontWeight: 600,
             }}

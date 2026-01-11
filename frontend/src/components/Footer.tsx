@@ -19,11 +19,11 @@ export default function Footer() {
       component="footer"
       sx={{
         mt: "auto",
-        px: 4,
-        py: 3,
-        borderTop: "1px solid",
+        px: 3,
+        py: 6,
+        borderTop: `1px solid ${theme.palette.borderColor}`,
         borderColor: "divider",
-        backgroundColor: theme.palette.background.glass,
+        backgroundColor: theme.palette.background.glassHeader,
         fontFamily: "DM Sans",
       }}
     >

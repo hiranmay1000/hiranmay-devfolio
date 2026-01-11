@@ -63,12 +63,12 @@ export default function Header({
           display: "flex",
           justifyContent: "center",
           borderRadius: 3,
-          background: theme.palette.background.glass,
+          background: theme.palette.background.glassHeader,
           backdropFilter: "blur(15px)",
           WebkitBackdropFilter: "blur(15px)",
           left: "50%",
           transform: "translateX(-50%)",
-          boxShadow: `0px 0px 50px ${theme.palette.boxShadow}`,
+          boxShadow: theme.palette.boxShadow,
 
           width: {
             xs: "95%",

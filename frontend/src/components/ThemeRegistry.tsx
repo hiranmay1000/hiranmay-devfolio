@@ -12,7 +12,7 @@ declare module "@mui/material/styles" {
 
   interface TypeBackground {
     glass: string;
-    chip: string;
+    glassHeader: string;
   }
 
   interface Palette {
@@ -41,34 +41,41 @@ export default function ThemeRegistry({
     palette: {
       mode,
 
-      primary: {
-        main: "#1976d2",
-      },
-
-      secondary: {
-        main: "#9c27b0",
-      },
+      primary: { main: "#1976d2" },
+      secondary: { main: "#9c27b0" },
 
       background: {
         default: mode === "light" ? "#f6f7f9" : "#00080e",
-        paper: mode === "light" ? "#fff" : "#000e1e",
+        paper: mode === "light" ? "#ffffff" : "#000e1e",
+
+        // cards, forms, containers
         glass:
           mode === "light"
-            ? "rgba(134, 134, 134, 0.07)"
-            : "rgba(255, 255, 255, 0.2)",
-        chip:
+            ? "rgba(255, 255, 255, 0.55)"
+            : "rgba(0, 14, 30, 0.65)",
+
+        // 👇 AppBar / Header glass (brighter)
+        glassHeader:
           mode === "light"
-            ? "rgba(134, 134, 134, 0.14)"
-            : "rgba(255, 255, 255, 0.17)",
+            ? "rgba(255, 255, 255, 0.85)"
+            : "rgba(10, 25, 45, 0.85)",
       },
 
-      borderColor: mode === "light" ? "#e1e1e1" : "rgba(255, 255, 255, 0.29)",
-      boxShadow: "#3535355e",
+      borderColor:
+        mode === "light" ? "rgba(0, 0, 0, 0.08)" : "rgba(255, 255, 255, 0.12)",
+
+      boxShadow:
+        mode === "light"
+          ? "0 6px 20px rgba(0, 0, 0, 0.1)"
+          : "0 6px 20px rgba(0, 0, 0, 0.7)",
 
       text: {
         primary: mode === "light" ? "#111" : "#ffffff",
-        secondary: mode === "light" ? "#555" : "rgba(255,255,255,0.5)",
-        highlight: mode === "light" ? "#eee" : "#333",
+        secondary: mode === "light" ? "#555" : "rgba(255,255,255,0.6)",
+        highlight:
+          mode === "light"
+            ? "rgba(236, 236, 236, 0.7)"
+            : "rgba(68, 103, 147, 0.35)",
       },
     },
 

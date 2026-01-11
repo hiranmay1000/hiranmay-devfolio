@@ -34,7 +34,6 @@ export const GithubCard = (props: { repo: Repo }) => {
         minWidth: pathname === "/githubrepos" ? undefined : "270px",
         minHeight: "350px",
         borderRadius: 4,
-        backgroundColor: `${theme.palette.background.glass}`,
         backdropFilter: "blur(10px)",
         // border: `3px solid ${theme.palette.background.glass}`,
         display: "flex",
@@ -119,7 +118,7 @@ export const GithubCard = (props: { repo: Repo }) => {
               sx={{
                 borderRadius: "3px",
                 border: `1px solid ${theme.palette.borderColor}`,
-                background: theme.palette.background.chip,
+                background: theme.palette.text.highlight,
                 color: theme.palette.text.secondary,
                 fontSize: 11,
                 letterSpacing: "0.12em",

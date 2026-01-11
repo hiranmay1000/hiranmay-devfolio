@@ -14,7 +14,6 @@ export const GithubCardSkeleton = (props: { key: number }) => {
         borderRadius: 4,
         backdropFilter: "blur(10px)",
         backgroundColor: "transparent",
-        border: `3px solid ${theme.palette.background.glass}`,
         display: "flex",
         flexDirection: "column",
         gap: 2,
