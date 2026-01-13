@@ -14,7 +14,7 @@ export default function Home() {
           xs: "100%",
           sm: "600px",
           md: "900px",
-          lg: "1000px",
+          lg: "1200px",
         },
         margin: "0 auto",
         padding: "40px 20px",

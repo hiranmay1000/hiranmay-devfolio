@@ -90,12 +90,12 @@ export default function GithubRepoSection(props: { limit?: number }) {
           gap: 3,
         }}
       >
-        {isLoading
+        {!isLoading
           ? Array.from({ length: 8 }).map((_, i) => (
               <GithubCardSkeleton key={i} />
             ))
-          : displayed.map((repo) => {
-              return <GithubCard repo={repo} />;
+          : displayed.map((repo, index) => {
+              return <GithubCard key={`${repo.id}-${index}`} repo={repo} />;
             })}
       </Box>
     </Box>

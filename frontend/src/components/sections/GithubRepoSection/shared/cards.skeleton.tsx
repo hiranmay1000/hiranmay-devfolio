@@ -1,11 +1,10 @@
 import { Box, Divider, Paper, Skeleton } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-export const GithubCardSkeleton = (props: { key: number }) => {
+export const GithubCardSkeleton = () => {
   const theme = useTheme();
   return (
     <Paper
-      key={props.key}
       elevation={3}
       sx={{
         p: 3,

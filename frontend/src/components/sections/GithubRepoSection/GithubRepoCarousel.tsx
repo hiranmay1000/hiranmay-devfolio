@@ -136,8 +136,8 @@ export default function GithubRepoCarousel({ limit = 10 }: { limit?: number }) {
             ? Array.from({ length: 12 }).map((_, i) => (
                 <GithubCardSkeleton key={i} />
               ))
-            : data.map((repo) => {
-                return <GithubCard repo={repo} />;
+            : data.map((repo, index) => {
+                return <GithubCard key={`${repo.id}-${index}`} repo={repo} />;
               })}
         </Box>
       </Box>

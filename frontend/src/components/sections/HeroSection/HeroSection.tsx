@@ -1,13 +1,18 @@
 "use client";
 
-import { Box, Container, Typography, useTheme } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import Highlight from "@/components/shared/Highlight";
 import GlowCards from "./GlowCards";
 import "./herosection.css";
+import Snowfall from "react-snowfall";
+import { useTheme } from "@mui/material/styles";
 
 export default function HeroSection() {
+  const theme = useTheme();
+
   return (
     <Container id="home" maxWidth="lg" sx={{ pt: 5, textAlign: "center" }}>
+      <Snowfall color={theme.palette.text.secondary} />
       <Typography variant="h3" fontWeight={700}>
         <span className="flicker-text">Hi, I’m</span>{" "}
         <span style={{ color: "#6b6b6bff" }}>Hiranmay</span> 👋
